@@ -20,17 +20,17 @@ public class UsuarioService implements IUsuarioService {
 
 	@Override
 	public UsuarioResponseDTO crearUsuario(Usuario usuario) {
-		usuario.setUsername(encryptService.encrypt(usuario.getUsername()));
-		usuario.setPassword(encryptService.encrypt(usuario.getPassword()));
-		usuario.setNumTarjeta(encryptService.encrypt(usuario.getNumTarjeta()));
-		usuario = usuarioRepository.save(usuario);
+		usuario.setUsername(this.encryptService.encrypt(usuario.getUsername()));
+		usuario.setPassword(this.encryptService.encrypt(usuario.getPassword()));
+		usuario.setNumTarjeta(this.encryptService.encrypt(usuario.getNumTarjeta()));
+		usuario = this.usuarioRepository.save(usuario);
 		return convertObjectUsuario(usuario);
 	}
 
 	@Override
 	public UsuarioResponseDTO logearse(Usuario usuario) {
-		Usuario lUsuario = usuarioRepository.login(encryptService.encrypt(usuario.getUsername()));
-		String pass = encryptService.encrypt(usuario.getPassword());
+		Usuario lUsuario = this.usuarioRepository.login(this.encryptService.encrypt(usuario.getUsername()));
+		String pass = this.encryptService.encrypt(usuario.getPassword());
 		if(lUsuario.getPassword().equals(pass)){
 			return convertObjectUsuario(lUsuario);
 		}
@@ -43,7 +43,7 @@ public class UsuarioService implements IUsuarioService {
 		dto.setNit(usuario.getNit());
 		dto.setNombre(usuario.getNombre());
 		dto.setApellido(usuario.getApellido());
-		dto.setUsername(encryptService.decrypt(usuario.getUsername()));
+		dto.setUsername(this.encryptService.decrypt(usuario.getUsername()));
 		return dto;
 	}
 }

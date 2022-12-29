@@ -34,5 +34,15 @@ public class Producto implements Serializable{
 		this.concepto = concepto;
 	}
 	
+	public Producto() {
+		super();
+	}
+
+	public Producto(Long id, String concepto) {
+		super();
+		this.id = id;
+		this.concepto = concepto;
+	}
+
 	private static final long serialVersionUID = 1536635007240220650L;
 }

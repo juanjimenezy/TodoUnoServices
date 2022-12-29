@@ -67,5 +67,18 @@ public class Factura implements Serializable{
 		return serialVersionUID;
 	}
 
+	public Factura() {
+		super();
+	}
+
+	public Factura(Long id, Producto producto, Integer cantidad, Double valorUnitario, Double valorTotal) {
+		super();
+		this.id = id;
+		this.producto = producto;
+		this.cantidad = cantidad;
+		this.valorUnitario = valorUnitario;
+		this.valorTotal = valorTotal;
+	}
+
 	private static final long serialVersionUID = 4685829251727516662L;
 }

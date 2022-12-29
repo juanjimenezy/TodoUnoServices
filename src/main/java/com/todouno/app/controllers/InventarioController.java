@@ -27,7 +27,7 @@ public class InventarioController {
 		Map<String,Object> response = new HashMap<>();
 		List<Inventario> inventario = new ArrayList<Inventario>();
 		try {
-			inventario = inventarioService.inventario();
+			inventario = this.inventarioService.inventario();
 			if(inventario.isEmpty()){
 				response.put("error", "No existen productos.");
 				return new ResponseEntity<Map<String,Object>>(response,HttpStatus.NOT_FOUND);

@@ -52,7 +52,7 @@ public class InventarioService implements IInventarioService{
 
 	@Override
 	public List<Inventario> inventario() {
-		return (List<Inventario>) inventarioRepository.findAll();
+		return (List<Inventario>) this.inventarioRepository.findAll();
 	}
 	
 	

@@ -29,7 +29,7 @@ public class ProductoController {
 		Map<String,Object> response = new HashMap<>();
 		List<Producto> productos = new ArrayList<Producto>();
 		try {
-			productos = productoService.buscarTodos();
+			productos = this.productoService.buscarTodos();
 		} catch (Exception e) {
 			response.put("error", e.getMessage());
 			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
@@ -43,7 +43,7 @@ public class ProductoController {
 		Map<String,Object> response = new HashMap<>();
 		Producto newProducto = null;
 		try {
-			newProducto = productoService.guardar(producto);
+			newProducto = this.productoService.guardar(producto);
 			if(newProducto == null) {
 				response.put("error", "Error grabando producto");
 				return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);

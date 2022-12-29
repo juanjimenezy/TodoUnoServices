@@ -52,5 +52,16 @@ public class Inventario implements Serializable{
 		this.cantidad = cantidad;
 	}
 	
+	public Inventario() {
+		super();
+	}
+
+	public Inventario(Long id, Producto producto, Integer cantidad) {
+		super();
+		this.id = id;
+		this.producto = producto;
+		this.cantidad = cantidad;
+	}
+
 	private static final long serialVersionUID = -8223027339634711971L;
 }

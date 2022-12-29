@@ -29,7 +29,7 @@ public class FacturaController {
 		FacturaResponseDTO response = new FacturaResponseDTO();
 		List<Factura> facturas = new ArrayList<Factura>();
 		try {
-			facturas = facturaService.facturas();
+			facturas = this.facturaService.facturas();
 			if (facturas.isEmpty()) {
 				response.setMensaje("No existen facturas");
 				return new ResponseEntity<FacturaResponseDTO>(response, HttpStatus.NOT_FOUND);

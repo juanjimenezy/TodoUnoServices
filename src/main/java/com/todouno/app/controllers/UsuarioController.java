@@ -27,7 +27,7 @@ public class UsuarioController {
 		Map<String,Object> response = new HashMap<>();
 		UsuarioResponseDTO newUsuario = null;
 		try {
-			newUsuario = usuarioService.crearUsuario(usuario);
+			newUsuario = this.usuarioService.crearUsuario(usuario);
 		} catch (Exception e) {
 			response.put("error", e.getMessage());
 			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
@@ -41,7 +41,7 @@ public class UsuarioController {
 		Map<String,Object> response = new HashMap<>();
 		UsuarioResponseDTO lUsuario = null;
 		try {
-			lUsuario = usuarioService.logearse(usuario);
+			lUsuario = this.usuarioService.logearse(usuario);
 		} catch (Exception e) {
 			response.put("error", e.getMessage());
 			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);

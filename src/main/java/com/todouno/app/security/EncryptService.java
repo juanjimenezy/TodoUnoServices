@@ -63,7 +63,7 @@ public class EncryptService implements IEncryptService {
 	}
 
 	public String getKey() {
-		return environment.getProperty("keySecutiry");
+		return this.environment.getProperty("keySecutiry");
 	}
 
 }
